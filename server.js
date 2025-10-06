@@ -23,13 +23,13 @@ app.use(express.json()); // to parse json body
 app.use(cookieParser());
 app.use(
     cors({
-        // origin: 'https://ed-tech-platform-frontend.onrender.com', // frontend link
-        // origin: process.env.FRONTEND_URL,
-        // origin: "*",
-        origin: process.env.FRONTEND_URL,   
-        credentials: true
+        origin: 'https://upskill-yourself-vdu2.onrender.com', // your frontend URL
+        credentials: true, // allow cookies/auth headers
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // allowed HTTP methods
+        allowedHeaders: ['Content-Type', 'Authorization'], // allowed headers
     })
 );
+
 app.use(
     fileUpload({
         useTempFiles: true,
